@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Doctor Information</h1>
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>Doctor name</th>
+      <th>Doctor ID</th>
+      <th>Address1</th>
+      <th>Address2</th>
+      <th></th>
+    </tr>
+    {% for doctor in docinfo %}
+      <tr>
+        <td>{{doctor[1]}}</td>
+        <td>{{doctor[4]}}</td>
+        <td>{{doctor[2]}}</td>
+        <td>{{doctor[3]}}</td>
+        <td>
+          <form action="{{url_for('delete_docinfo', id=doctor[4])}}" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete" class="btn btn-danger">
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

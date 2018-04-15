@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Available Appointment</h1>
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>Docter Name</th>
+      <th>Docter ID</th>
+      <th>Time</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+    {% for doctor in appinfo %}
+      <tr>
+        <td>{{doctor[1]}}</td>
+        <td>{{doctor[2]}}</td>
+        <td>{{doctor[3]}}</td>
+        <td>{{doctor[5]}}</td>
+        <td>
+          <form action="{{url_for('book_app', id=doctor[0])}}" method="post">
+            <input type="hidden" name="_method" value="Make appointment">
+            <input type="submit" value="Make Appointment" class="btn btn-primary">
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

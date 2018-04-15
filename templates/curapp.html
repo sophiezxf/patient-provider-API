@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <h1>Current Appointment</h1>
+  <hr>
+  <table class="table table-striped">
+    <tr>
+      <th>Docter Name</th>
+      <th>Docter ID</th>
+      <th>Time</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+    {% for doctor in appinfo %}
+      <tr>
+        <td>{{doctor[1]}}</td>
+        <td>{{doctor[2]}}</td>
+        <td>{{doctor[3]}}</td>
+        <td>{{doctor[5]}}</td>
+        <td>
+          <form action="{{url_for('cancel_app', id=doctor[0])}}" method="post">
+            <input type="hidden" name="_method" value="Cancel appointment">
+            <input type="submit" value="Cancel Appointment" class="btn btn-danger">
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
