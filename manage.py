@@ -17,7 +17,7 @@ app.config['MYSQL_DATABASE_DB'] = 'doctorinfo'
 app.config['MYSQL_DATABASE_CURSORCLASS'] = 'DictCursor'
 mysql.init_app(app)
 
-
+# flask
 
 @app.route('/')
 def index():
