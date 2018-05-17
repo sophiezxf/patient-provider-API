@@ -10,7 +10,7 @@ I use the Python flask web framework to build a web application that can:
 5. Log-in function for the internal users to input doctor information is not available at this time, since it requires preset databases. So right now, anyone can edit the doctor information.
 
 
-# To run the API #
+# To run the API - following the steps #
 1. Have Python2.7, pip, Flask-MySQL installed.
 
 2. Install Flask-MySQL:
