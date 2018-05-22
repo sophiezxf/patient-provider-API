@@ -1,4 +1,4 @@
-* What are some real-world constraints to booking appointments that would add complexity to this API and how would they impact the design.
+Some real-world constraints to booking appointments that would add complexity to this API and how would they impact the design.
 
 1. How to properly match patients' clinical need with doctors. 
 	Complexity to the API: 
